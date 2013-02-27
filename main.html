@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<H1>Get Critic Similarity Ranking</H1>
+	<form action="" method="get">
+		<div>
+			<input type="hidden" name="func" value="criticSimilarity">
+			<select name="criticToCompare">
+				<option value="Lisa Rose">Lisa Rose</option>
+				<option value="Gene Seymour">Gene Seymour</option>
+				<option value="Michael Phillips">Michael Phillips</option>
+				<option value="Mick LaSalle">Mick LaSalle</option>
+				<option value="Jack Matthews">Jack Matthews</option>
+				<option value="Toby">Toby</option>
+				<option value="Bob">Bob</option>
+				<option value="Larry">Larry</option>
+				<option value="Samantha">Samantha</option>
+			</select>
+			
+		</div>
+		<input type="submit" value="Compare">
+	</form>
+	<P>
+	<H1>Get Movie Recommendations</H1>
+	<form action="" method="get">
+		<input type="hidden" name="func" value="getRecommendation">
+		<input type="text" name="criticToGetRecommendations" placeholder="Lisa Rose" />
+		<input type="submit" value="Get Recommendations">
+	</form>
+	<p>
+	<H1>Get Similar Movies</H1>
+	<form action="" method="get">
+		<input type="hidden" name="func" value="getSimilarMovies">
+		<input type="text" name="movieToGetSimilar" placeholder="Superman Returns" />
+		<input type="submit" value="Get Similar Movies">
+	</form>
+	<p>
+	
+	<table>
+		<TR>
+			<TD>
+				Euclidean Results:
+				{% autoescape false %}
+				{{ resultEuclidean }}
+				{% endautoescape %}
+			</TD>
+			<TD>
+				Pearson Results:
+				{% autoescape false %}
+				{{ resultPearson }}
+				{% endautoescape %}
+			</TD>
+			<TD>
+				Ext Jaccard Results:
+				{% autoescape false %}
+				{{ resultExtJaccard }}
+				{% endautoescape %}
+			</TD>
+			<TD>
+				Cosine Results:
+				{% autoescape false %}
+				{{ resultCosine }}
+				{% endautoescape %}
+			</TD>
+		</TR>
+	</table>
+	<p>
+	<p>
+	Formatted Data:
+	{% autoescape false %}
+	{{ formatted_data }}
+	{% endautoescape %}
+</body>
+</html>
+	
